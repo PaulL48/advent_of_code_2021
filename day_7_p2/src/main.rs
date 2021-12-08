@@ -57,7 +57,7 @@ use std::i32;
 
 fn main() {
     let mut min = i32::MAX;
-    for i in 0..1000 {
+    for i in 0..2000 {
         let t = total_distance(INPUT, i);
         if t < min {
             min = t;
