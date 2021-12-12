@@ -24,7 +24,7 @@ fn main() {
     let mut end_node = None;
 
     for line in input.lines() {
-        let mut iter = line.split("-");
+        let mut iter = line.split('-');
         let lhs = iter.next().unwrap();
         let rhs = iter.next().unwrap();
 
@@ -63,8 +63,8 @@ fn main() {
     println!("{}", output.len());
 }
 
-fn unique_paths<'a>(
-    graph: &'a Graph<Cave, (), Undirected>,
+fn unique_paths(
+    graph: &Graph<Cave, (), Undirected>,
     mut visited: HashSet<NodeIndex>,
     current: NodeIndex,
     mut current_path: Vec<NodeIndex>,

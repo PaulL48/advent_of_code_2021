@@ -1,7 +1,6 @@
 use petgraph::{graph::NodeIndex, Graph, Undirected};
 use std::collections::{HashMap, HashSet};
 use std::str;
-use std::thread;
 
 #[derive(Debug, Copy, Clone, Hash)]
 struct Cave<'a> {
@@ -25,7 +24,7 @@ fn main() {
     let mut end_node = None;
 
     for line in input.lines() {
-        let mut iter = line.split("-");
+        let mut iter = line.split('-');
         let lhs = iter.next().unwrap();
         let rhs = iter.next().unwrap();
 
@@ -64,13 +63,13 @@ fn main() {
     println!("{}", output.len());
 }
 
-fn unique_paths<'a>(
-    graph: &'a Graph<Cave, (), Undirected>,
+fn unique_paths(
+    graph: &Graph<Cave, (), Undirected>,
     mut visited: HashSet<NodeIndex>,
     current: NodeIndex,
     mut current_path: Vec<NodeIndex>,
     end: NodeIndex,
-    mut small_twice: bool,
+    small_twice: bool,
 ) -> Vec<Vec<NodeIndex>> {
     // Vec<Path>
     // If the current node is small, add it to visited
