@@ -7,7 +7,6 @@ fn main() {
     let input = input.chars().filter_map(|c| c.to_digit(10)).collect::<Vec<_>>();
     let mut grid = Grid::from_vec(input, 10);
 
-    let mut simultaneous = false;
     for step in 0..1000 {
         let mut flashed = HashSet::new();
 
