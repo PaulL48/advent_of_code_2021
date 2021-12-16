@@ -41,7 +41,7 @@ impl From<&str> for Vec2i {
     }
 }
 
-fn apply_folds(folds: &Vec<(Direction, i32)>, mut p: Vec2i) -> Vec2i {
+fn apply_folds(folds: &[(Direction, i32)], mut p: Vec2i) -> Vec2i {
     for (direction, fold_line) in folds {
         p = match direction {
             Direction::X => Vec2i(fold(p.0, *fold_line), p.1),
